@@ -28,23 +28,22 @@
 
 
 
+let score = [];
 
-const score = [];
 
 function play(clickId) {
-  const playerSpan = document.getElementById('player');
-  const clickedElement = document.getElementById(clickId);
-
-  if (playerSpan.innerText === 'X') {
-    playerSpan.innerText = 'O';
-    clickedElement.innerText = 'X';
-    score[clickId] = 'X';
-  } else {
-    playerSpan.innerText = 'X';
-    clickedElement.innerText = 'O';
-    score[clickId] = 'O';
-  }
-
+    const playerSpan = document.getElementById('player');
+    const clickedElement = document.getElementById(clickId)
+    if (playerSpan.innerText === 'X') {
+        playerSpan.innerText = 'O';
+        clickedElement.innerText = 'X';
+        score[clickId] = 'X';
+    } else {
+        playerSpan.innerText = 'X';
+        clickedElement.innerText = 'O';
+        score[clickId] = 'O';
+    }
+    
 
 let topLeft = score[0]
 let topCenter = score[1]
@@ -57,35 +56,35 @@ let bottomCenter = score[7]
 let bottomRight = score[8]
 
   if (topLeft !== undefined && topLeft === topCenter && topLeft === topRight) {
-    alert.window(`Player ${topLeft} is the champion`);
+    alert(`Player ${topLeft} is the champion`);
     return;
   }
   if (middleLeft !== undefined && middleLeft === middleCenter && middleLeft === middleRight) {
-    alert.window(`Player ${middleLeft} crushed it!`);
+    alert(`Player ${middleLeft} crushed it!`);
     return;
   }
   if (bottomLeft !== undefined && bottomLeft === bottomCenter && bottomLeft === bottomRight) {
-    alert.window(`Player ${bottomLeft} wins, domination`);
+    alert(`Player ${bottomLeft} wins, domination`);
     return;
   }
   if (topLeft !== undefined && topLeft === middleLeft && topLeft === bottomLeft) {
-    alert.window(`Player ${topLeft} scrapes over the finish line`);
+    alert(`Player ${topLeft} scrapes over the finish line`);
     return;
   }
   if (topCenter !== undefined && topCenter === middleCenter && topCenter === bottomCenter) {
-    alert.window(`Player ${topCenter} doesn't lose, for once?`);
+    alert(`Player ${topCenter} doesn't lose, finally!`);
     return;
   }
   if (topRight !== undefined && topRight === middleRight && topRight === bottomRight) {
-    alert.window(`Player ${topRight} has bragging rights, for now`);
+    alert(`Player ${topRight} has bragging rights, for now`);
     return;
   }
   if (topLeft !== undefined && topLeft === middleCenter && topLeft === bottomRight) {
-    alert.window(`Player ${topLeft}'s opponent will want a rematch `);
+    alert(`Player ${topLeft}'s opponent will want a rematch `);
     return;
   }
   if (bottomLeft !== undefined && bottomLeft === middleCenter && bottomLeft === topRight) {
-    alert.window(`Player ${bottomLeft} wants to find all these messages and also won this round!`);
+    alert(`Player ${bottomLeft} wants to find all these messages and also won this round!`);
     return;
   }
 
